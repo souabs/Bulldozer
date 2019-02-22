@@ -21,6 +21,6 @@ Route::get('lang/{locale}', function ($locale) {
 Auth::routes();
 Route::get('/', 'HomeController@index');
 //Route::get('/lang/{locale}', 'HomeController@lang');
-
+Route::get('/links/redirect/{code}', 'LinkController@redirect');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/links', 'LinkController');
