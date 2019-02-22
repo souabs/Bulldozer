@@ -29,6 +29,13 @@ class LinkController extends Controller
             return view('links.index', [])->with('mylinks',$mylinks);
 
     }
+    public function redirect(Request $request,$code)
+
+    {
+        //redirect link
+        $mylinks=Link::where('short_link',$code)->get();
+        return Redirect::to($mylinks[0]['original_link']);
+    }
 
     /**
      * Show the form for creating a new resource.
